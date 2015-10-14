@@ -6,8 +6,8 @@ var fs = require('fs');
 function DirTransferPlugin(patterns, basePaths) {
     this.patterns = patterns || [];
     if (basePaths) {
-        this.srcBasePath = basePaths.srcBasePath;
-        this.destBasePath = basePaths.destBasePath;
+        this.srcBasePath = basePaths.src;
+        this.destBasePath = basePaths.dest;
     }
 }
 
