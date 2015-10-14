@@ -3,10 +3,12 @@ var dir = require('node-dir');
 var vow = require('vow');
 var fs = require('fs');
 
-function DirTransferPlugin(patterns, srcBasePath, destBasePath) {
+function DirTransferPlugin(patterns, basePaths) {
     this.patterns = patterns || [];
-    this.srcBasePath = srcBasePath;
-    this.destBasePath = destBasePath;
+    if (basePaths) {
+        this.srcBasePath = basePaths.srcBasePath;
+        this.destBasePath = basePaths.destBasePath;
+    }
 }
 
 DirTransferPlugin.prototype.apply = function(compiler) {
